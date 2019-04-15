@@ -1,8 +1,8 @@
-import Test from './pages/Test'
+import Home from './pages/Home'
 
 export const routes = [
   {
-    path: '/test',
-    component: Test
+    path: '/',
+    component: Home
   }
 ];
