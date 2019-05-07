@@ -1,0 +1,66 @@
+.navbar {
+  height: 90px;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  animation: slide-in .3s ease-in-out;
+  animation-iteration-count: 1;
+  margin-bottom: 30px;
+  &__logo {
+    font-size: 10rem;
+
+    &__container {
+
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    @include font-size(18px);
+  }
+
+  &__link {
+    padding: 5px 10px;
+    padding-left: 0;
+    margin: 0 20px;
+    &:hover {
+      color: $o-color-main;
+    }
+    &--active {
+     color: $o-color-main;
+      font-weight: 500;
+      position: relative;
+      &::after {
+        content: '';
+        width: 50%;
+        height: 2px;
+        background-color: $o-color-main;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        animation: progress .8s ease-in-out;
+        animation-iteration-count: 1;
+      }
+    }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
